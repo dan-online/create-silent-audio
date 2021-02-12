@@ -14,14 +14,13 @@ function createSilentAudio(time, freq = 44100) {
 function bufferToWave(abuffer, len) {
   let numOfChan = abuffer.numberOfChannels,
     length = len * numOfChan * 2 + 44,
-    buffer = new ArrayBuffer(length),
+    buffer = new Buffer(length),
     view = new DataView(buffer),
     channels = [],
     i,
     sample,
     offset = 0,
     pos = 0;
-
   // write WAVE header
   setUint32(0x46464952);
   setUint32(length - 8);
