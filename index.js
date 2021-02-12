@@ -7,7 +7,6 @@ function createSilentAudio(time, freq = 44100) {
     length: length,
     numberOfChannels: 2,
   });
-  s;
   return bufferToWave(audioFile, length);
 }
 
