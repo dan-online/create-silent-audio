@@ -4,6 +4,7 @@ function createSilentAudio(time, freq = 44100) {
   const length = time * freq;
   const audioFile = new AudioContext(null, {
     duration: time,
+    length: length,
     numberOfChannels: 2,
   });
   console.log(audioFile);
